@@ -6,4 +6,4 @@ RUN mvn clean package
 FROM openjdk:8-jre
 WORKDIR /app
 COPY --from=MAVEN_BUILD /build/target/simple-syslog-server.jar ./app.jar
-CMD ["java", "-jar", "./app.jar", "tls"]
+CMD ["java", "-jar", "./app.jar", "tcp"]
